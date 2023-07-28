@@ -10,6 +10,8 @@ namespace NetAuthTokenProject.Models
         public byte[] PasswordHash { get; set; }
         [Required]
         public byte[] PasswordSalt { get; set; }
+        [Required]
+        public string Role { get; set; }
 
     }
 }

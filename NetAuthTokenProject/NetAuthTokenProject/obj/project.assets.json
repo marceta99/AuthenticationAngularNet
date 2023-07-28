@@ -997,11 +997,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Mihailo\\Desktop\\ProgrammingProjects\\NetAuthTokenProject\\NetAuthTokenProject\\NetAuthTokenProject.csproj",
+      "projectUniqueName": "C:\\Users\\Mihailo\\Desktop\\ProgrammingProjects\\Auth\\NetAuthTokenProject\\NetAuthTokenProject\\NetAuthTokenProject.csproj",
       "projectName": "NetAuthTokenProject",
-      "projectPath": "C:\\Users\\Mihailo\\Desktop\\ProgrammingProjects\\NetAuthTokenProject\\NetAuthTokenProject\\NetAuthTokenProject.csproj",
+      "projectPath": "C:\\Users\\Mihailo\\Desktop\\ProgrammingProjects\\Auth\\NetAuthTokenProject\\NetAuthTokenProject\\NetAuthTokenProject.csproj",
       "packagesPath": "C:\\Users\\Mihailo\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Mihailo\\Desktop\\ProgrammingProjects\\NetAuthTokenProject\\NetAuthTokenProject\\obj\\",
+      "outputPath": "C:\\Users\\Mihailo\\Desktop\\ProgrammingProjects\\Auth\\NetAuthTokenProject\\NetAuthTokenProject\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Mihailo\\AppData\\Roaming\\NuGet\\NuGet.Config",

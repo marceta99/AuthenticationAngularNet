@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "0Xj3AYOsttgiikxfS+mcz09iDETSRtXQSZtob3hBfew4EYiOZoL7bHiNkXLAZG46qXP1FYI10kmBQA9hgcZUWQ==",
+  "dgSpecHash": "gftfGOaxTGu1LTeX8WCRrMeqKAT/vvZt3rJ25r64qQouuWI74blqomA9G/e+WU56GVqv8Icfn/rU0rpCgOwOrA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Mihailo\\Desktop\\ProgrammingProjects\\NetAuthTokenProject\\NetAuthTokenProject\\NetAuthTokenProject.csproj",
+  "projectFilePath": "C:\\Users\\Mihailo\\Desktop\\ProgrammingProjects\\Auth\\NetAuthTokenProject\\NetAuthTokenProject\\NetAuthTokenProject.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Mihailo\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\6.0.20\\microsoft.aspnetcore.authentication.jwtbearer.6.0.20.nupkg.sha512",
     "C:\\Users\\Mihailo\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",

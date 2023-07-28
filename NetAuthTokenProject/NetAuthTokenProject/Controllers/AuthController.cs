@@ -45,7 +45,10 @@ namespace NetAuthTokenProject.Controllers
             var key = Encoding.ASCII.GetBytes(this._applicationSettings.Secret);
             var tokenDescriptor = new SecurityTokenDescriptor
             {
-                Subject = new ClaimsIdentity(new[] { new Claim("id", user.UserName)} ), 
+                Subject = new ClaimsIdentity(new[] {
+                    new Claim("id", user.UserName),
+                    new Claim(ClaimTypes.Role, user.Role)
+                }), 
                 Expires = DateTime.UtcNow.AddDays(7), 
                 SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha512Signature)
             };
@@ -72,7 +75,7 @@ namespace NetAuthTokenProject.Controllers
         [HttpPost("Register")]
         public IActionResult Register([FromBody] Register model)
         {
-            var user = new User() { UserName= model.UserName };
+            var user = new User() { UserName= model.UserName, Role = model.Role };
 
             if (model.ConfirmPassword == model.Password)
             {

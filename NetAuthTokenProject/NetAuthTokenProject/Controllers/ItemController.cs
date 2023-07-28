@@ -6,7 +6,7 @@ namespace NetAuthTokenProject.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    [Authorize]
+    [Authorize(Roles = "Admin, HR")]
     public class ItemController : ControllerBase
     {
         public List<string> colors = new List<string> { "Red", "Blue", "Purple" };
