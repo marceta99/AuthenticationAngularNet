@@ -1,9 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "gftfGOaxTGu1LTeX8WCRrMeqKAT/vvZt3rJ25r64qQouuWI74blqomA9G/e+WU56GVqv8Icfn/rU0rpCgOwOrA==",
+  "dgSpecHash": "AN+CNZJM055VWEmdb4vRIuXw+yfxnI81RBl554jOZYRvTfOu6R24pFnOk+qC0kRLibQ6XHFmTo8BGKsi2EaKxA==",
   "success": true,
   "projectFilePath": "C:\\Users\\Mihailo\\Desktop\\ProgrammingProjects\\Auth\\NetAuthTokenProject\\NetAuthTokenProject\\NetAuthTokenProject.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Mihailo\\.nuget\\packages\\google.apis\\1.61.0\\google.apis.1.61.0.nupkg.sha512",
+    "C:\\Users\\Mihailo\\.nuget\\packages\\google.apis.auth\\1.61.0\\google.apis.auth.1.61.0.nupkg.sha512",
+    "C:\\Users\\Mihailo\\.nuget\\packages\\google.apis.core\\1.61.0\\google.apis.core.1.61.0.nupkg.sha512",
     "C:\\Users\\Mihailo\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\6.0.20\\microsoft.aspnetcore.authentication.jwtbearer.6.0.20.nupkg.sha512",
     "C:\\Users\\Mihailo\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
     "C:\\Users\\Mihailo\\.nuget\\packages\\microsoft.extensions.apidescription.server\\3.0.0\\microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
@@ -16,6 +19,7 @@
     "C:\\Users\\Mihailo\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
     "C:\\Users\\Mihailo\\.nuget\\packages\\microsoft.netcore.targets\\1.1.0\\microsoft.netcore.targets.1.1.0.nupkg.sha512",
     "C:\\Users\\Mihailo\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
+    "C:\\Users\\Mihailo\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",
     "C:\\Users\\Mihailo\\.nuget\\packages\\swashbuckle.aspnetcore\\6.2.3\\swashbuckle.aspnetcore.6.2.3.nupkg.sha512",
     "C:\\Users\\Mihailo\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.2.3\\swashbuckle.aspnetcore.swagger.6.2.3.nupkg.sha512",
     "C:\\Users\\Mihailo\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.2.3\\swashbuckle.aspnetcore.swaggergen.6.2.3.nupkg.sha512",

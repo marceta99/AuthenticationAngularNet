@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Google.Apis.Auth;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
@@ -41,6 +42,11 @@ namespace NetAuthTokenProject.Controllers
                 return BadRequest("User name or password was invalid");
             }
 
+            return Ok(JwtGenerator(user));
+        }
+
+        private dynamic JwtGenerator(User user)
+        {
             var tokenHandler = new JwtSecurityTokenHandler();
             var key = Encoding.ASCII.GetBytes(this._applicationSettings.Secret);
             var tokenDescriptor = new SecurityTokenDescriptor
@@ -48,15 +54,15 @@ namespace NetAuthTokenProject.Controllers
                 Subject = new ClaimsIdentity(new[] {
                     new Claim("id", user.UserName),
                     new Claim(ClaimTypes.Role, user.Role)
-                }), 
-                Expires = DateTime.UtcNow.AddDays(7), 
+                }),
+                Expires = DateTime.UtcNow.AddDays(7),
                 SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha512Signature)
             };
 
             var token = tokenHandler.CreateToken(tokenDescriptor);
             var encripterToken = tokenHandler.WriteToken(token);
 
-            return Ok(new { token = encripterToken, userName = user.UserName });
+            return new {token = encripterToken, username = user.UserName};
         }
 
         private bool CheckPassword(string password, User user)
@@ -92,6 +98,28 @@ namespace NetAuthTokenProject.Controllers
             userList.Add(user);
 
             return Ok(user);
+        }
+
+        [HttpPost("LoginWithGoogle")]
+        public async Task<IActionResult> LoginWithGoogle([FromBody] string credentials)
+        {
+            var settings = new GoogleJsonWebSignature.ValidationSettings
+            {
+                Audience = new List<string> { this._applicationSettings.GoogleClientId }
+            };
+
+            var payload = await GoogleJsonWebSignature.ValidateAsync(credentials, settings);
+
+            var user = userList.Where(x => x.UserName == payload.Email).FirstOrDefault();
+
+            if (user != null)
+            {
+                return Ok(JwtGenerator(user));
+            }
+            else
+            {
+                return BadRequest();
+            }
         }
     }
 }
