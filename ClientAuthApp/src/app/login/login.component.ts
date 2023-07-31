@@ -42,7 +42,7 @@ export class LoginComponent {
    handleCredentialResponse(response: CredentialResponse) {
     this.service.loginWithGoogle(response.credential).subscribe({
       next :(x:any) => {
-        localStorage.setItem("token",x.token)
+        localStorage.setItem("user","mihailo marcetic");
         this._ngZone.run(() => {
           this.router.navigate(['/logout']);
         })},

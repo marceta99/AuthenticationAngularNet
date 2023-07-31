@@ -20,10 +20,12 @@ namespace NetAuthTokenProject.Controllers
         private readonly AppSettings _applicationSettings;
         public AuthController(IOptions<AppSettings> applicationSettings)
         {
-            this._applicationSettings= applicationSettings.Value;   
+            this._applicationSettings= applicationSettings.Value;
+            userList.Add(new Models.User() { UserName = "marcetic.mihailo99@gmail.com", Role = "Admin" });
         }
 
         private static List<User> userList = new List<User>();
+        
 
         [HttpPost("Login")]
         public IActionResult Login([FromBody] Login model)
@@ -41,8 +43,8 @@ namespace NetAuthTokenProject.Controllers
             {
                 return BadRequest("User name or password was invalid");
             }
-
-            return Ok(JwtGenerator(user));
+            JwtGenerator(user);
+            return Ok();
         }
 
         private dynamic JwtGenerator(User user)
@@ -59,8 +61,19 @@ namespace NetAuthTokenProject.Controllers
                 SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha512Signature)
             };
 
+
             var token = tokenHandler.CreateToken(tokenDescriptor);
             var encripterToken = tokenHandler.WriteToken(token);
+
+            HttpContext.Response.Cookies.Append("token", encripterToken,
+                new CookieOptions
+                { 
+                    Expires = DateTime.Now.AddDays(7),
+                    HttpOnly = true, 
+                    Secure=true, 
+                    IsEssential=true,
+                    SameSite=SameSiteMode.None
+                });
 
             return new {token = encripterToken, username = user.UserName};
         }
@@ -114,7 +127,8 @@ namespace NetAuthTokenProject.Controllers
 
             if (user != null)
             {
-                return Ok(JwtGenerator(user));
+                JwtGenerator(user);
+                return Ok();
             }
             else
             {
