@@ -5,6 +5,7 @@ import { LogoutComponent } from './logout/logout.component';
 
 const routes: Routes = [
   {path: '', component:LoginComponent, pathMatch:'full'},
+  {path: 'login', component:LoginComponent},
   {path: 'logout', component:LogoutComponent},
 ];
 

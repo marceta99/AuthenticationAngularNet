@@ -13,5 +13,8 @@ namespace NetAuthTokenProject.Models
         [Required]
         public string Role { get; set; }
 
+        public string Token { get; set; }
+        public DateTime TokenCreated { get; set; }
+        public DateTime TokenExpires { get; set; }
     }
 }

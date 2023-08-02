@@ -28,4 +28,14 @@ export class AuthService {
     return this.httpClient.get(this.path + "Item/GetColorList",
     {withCredentials : true});
   }
+
+  refreshToken(): Observable<any> {
+    const header = new HttpHeaders().set('Content-type', 'application/json');
+    return this.httpClient.get(this.path + "Auth/RefreshToken", { headers: header, withCredentials: true });
+  }
+
+  revokeToken(): Observable<any> {
+    const header = new HttpHeaders().set('Content-type', 'application/json');
+    return this.httpClient.delete(this.path + "Auth/RevokeToken/marcetic.mihailo99@gmail.com" , { headers: header, withCredentials: true });
+  }
 }
